@@ -1,0 +1,167 @@
+.list {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(138, 92, 246, 0.3);
+  border-radius: 16px;
+  padding: 25px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.list h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid rgba(138, 92, 246, 0.3);
+  padding-bottom: 15px;
+}
+
+.no-results {
+  text-align: center;
+  padding: 40px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.1rem;
+}
+
+/* Table Header */
+.table-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr 1fr 1fr;
+  gap: 10px;
+  padding: 15px;
+  background: linear-gradient(135deg, rgba(138, 92, 246, 0.3) 0%, rgba(99, 102, 241, 0.2) 100%);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Table Body */
+.table-body {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+/* Table Rows */
+.table-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr 1fr 1fr;
+  gap: 10px;
+  padding: 15px;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, rgba(138, 92, 246, 0.1) 0%, rgba(99, 102, 241, 0.05) 100%);
+  border: 1px solid rgba(138, 92, 246, 0.2);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  align-items: center;
+}
+
+.table-row:hover {
+  background: linear-gradient(135deg, rgba(138, 92, 246, 0.2) 0%, rgba(99, 102, 241, 0.1) 100%);
+  border-color: rgba(138, 92, 246, 0.4);
+  transform: translateX(5px);
+}
+
+.table-row span {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+}
+
+.city-name {
+  font-weight: 600;
+  color: #fff !important;
+}
+
+.temperature {
+  font-weight: 700;
+  color: #fbbf24 !important;
+}
+
+.weather-desc {
+  color: rgba(255, 255, 255, 0.8) !important;
+  text-transform: capitalize;
+}
+
+.humidity {
+  color: #60a5fa !important;
+}
+
+.wind-speed {
+  color: #34d399 !important;
+}
+
+/* Custom scrollbar */
+.table-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.table-body::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.table-body::-webkit-scrollbar-thumb {
+  background: rgba(138, 92, 246, 0.5);
+  border-radius: 10px;
+}
+
+.table-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(138, 92, 246, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .table-header,
+  .table-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .table-header span {
+    display: none;
+  }
+
+  .table-row span::before {
+    font-weight: 600;
+    margin-right: 8px;
+    color: rgba(138, 92, 246, 0.8);
+  }
+
+  .city-name::before {
+    content: "City: ";
+  }
+
+  .temperature::before {
+    content: "Temp: ";
+  }
+
+  .weather-desc::before {
+    content: "Weather: ";
+  }
+
+  .humidity::before {
+    content: "Humidity: ";
+  }
+
+  .wind-speed::before {
+    content: "Wind: ";
+  }
+}
+
+@media (max-width: 768px) {
+  .list {
+    padding: 20px;
+  }
+
+  .list h3 {
+    font-size: 1.3rem;
+  }
+
+  .table-row {
+    padding: 12px;
+  }
+}

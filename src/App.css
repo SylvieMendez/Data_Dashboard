@@ -1,0 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #1a0033 0%, #2d1b4e 50%, #0a0520 100%);
+  color: white;
+  min-height: 100vh;
+}
+
+.App {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Header */
+h1 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(138, 92, 246, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.8rem;
+  backdrop-filter: blur(10px);
+  margin-bottom: 0;
+}
+
+/* Navigation Bar */
+.navBar {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(138, 92, 246, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  height: fit-content;
+}
+
+.navBar a {
+  color: white;
+  text-decoration: none;
+  padding: 15px 20px;
+  border-radius: 8px;
+  background: rgba(138, 92, 246, 0.2);
+  border: 1px solid rgba(138, 92, 246, 0.3);
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navBar a:hover {
+  background: rgba(138, 92, 246, 0.4);
+  border-color: rgba(138, 92, 246, 0.6);
+  transform: translateX(5px);
+}
+
+.navBar a::before {
+  content: '🏠';
+  font-size: 1.2rem;
+}
+
+.navBar a:nth-child(2)::before {
+  content: '🔍';
+}
+
+.navBar a:nth-child(3)::before {
+  content: '📖';
+}
+
+/* Search Bar */
+.search_bar {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(138, 92, 246, 0.3);
+  border-radius: 12px;
+  padding: 15px 20px;
+  backdrop-filter: blur(10px);
+}
+
+.search_bar input {
+  flex: 1;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(138, 92, 246, 0.3);
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search_bar input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search_bar input:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(138, 92, 246, 0.6);
+}
+
+.search_bar .temp-filter {
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(138, 92, 246, 0.3);
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search_bar .temp-filter:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(138, 92, 246, 0.6);
+}
+
+.search_bar .temp-filter option {
+  background: #2d1b4e;
+  color: white;
+}
+
+.search_bar button {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search_bar button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4);
+}
+
+/* Main Container */
+.container {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Statistics Container */
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+/* List Wrapper */
+.list-wrapper {
+  flex: 1;
+}
+
+/* Error Message */
+.error {
+  grid-column: 2 / 3;
+  text-align: center;
+  padding: 15px;
+  background: rgba(255, 100, 100, 0.2);
+  border: 1px solid rgba(255, 100, 100, 0.4);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Loading Message */
+.loading-message {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .App {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto 1fr;
+  }
+
+  h1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  .search_bar {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    flex-wrap: wrap;
+  }
+
+  .navBar {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .container {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+  }
+
+  .stats-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}

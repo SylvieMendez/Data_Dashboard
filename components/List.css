@@ -46,7 +46,7 @@
   overflow-y: auto;
 }
 
-/* Table Rows */
+/* Table Rows - Now using Link */
 .table-row {
   display: grid;
   grid-template-columns: 2fr 1fr 1.5fr 1fr 1fr;
@@ -58,12 +58,16 @@
   border-radius: 8px;
   transition: all 0.3s ease;
   align-items: center;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .table-row:hover {
-  background: linear-gradient(135deg, rgba(138, 92, 246, 0.2) 0%, rgba(99, 102, 241, 0.1) 100%);
-  border-color: rgba(138, 92, 246, 0.4);
+  background: linear-gradient(135deg, rgba(138, 92, 246, 0.25) 0%, rgba(99, 102, 241, 0.15) 100%);
+  border-color: rgba(138, 92, 246, 0.5);
   transform: translateX(5px);
+  box-shadow: 0 4px 15px rgba(138, 92, 246, 0.3);
 }
 
 .table-row span {

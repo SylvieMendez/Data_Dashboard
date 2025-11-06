@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Card from '../components/Card';
+import HumidityChart from '../components/HumidityChart';
 import List from '../components/List';
+import TempChart from '../components/TempChart';
 import './App.css';
 
 export default function App() {
@@ -16,7 +19,7 @@ export default function App() {
   const [weatherData, setWeatherData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [tempFilter, setTempFilter] = useState("all"); // all, hot, moderate, cold
+  const [tempFilter, setTempFilter] = useState("all");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
 
@@ -139,9 +142,9 @@ export default function App() {
       {error && <p style={{color:"salmon"}} className="error">{error}</p>}
 
       <nav className="navBar">
-        <a href="#">Dashboard</a>
-        <a href="#">Search</a>
-        <a href="#">About</a>
+        <Link to="/">Dashboard</Link>
+        <Link to="/">Search</Link>
+        <Link to="/">About</Link>
       </nav>
 
       <div className="container">
@@ -181,7 +184,13 @@ export default function App() {
           </div>
         )}
 
-        {/* Weather List */}
+        {!loading && weatherData.length > 0 && (
+          <div className="charts-container">
+            <TempChart weatherData={weatherData} />
+            <HumidityChart weatherData={weatherData} />
+          </div>
+        )}
+
         <div className="list-wrapper">
           {loading ? (
             <p className="loading-message">Loading weather data...</p>

@@ -172,6 +172,13 @@ h1 {
   gap: 15px;
 }
 
+/* Charts Container */
+.charts-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
 /* List Wrapper */
 .list-wrapper {
   flex: 1;

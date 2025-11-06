@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './List.css';
 
 export default function List({ weatherData, searchQuery }) {
@@ -24,7 +25,11 @@ export default function List({ weatherData, searchQuery }) {
       </div>
       <div className="table-body">
         {weatherData.map((item, index) => (
-          <div key={index} className="table-row">
+          <Link 
+            key={index} 
+            to={`/city/${encodeURIComponent(item.city_name)}`}
+            className="table-row"
+          >
             <span className="city-name">
               {item.city_name}, {item.state_code}
             </span>
@@ -40,7 +45,7 @@ export default function List({ weatherData, searchQuery }) {
             <span className="wind-speed">
               {item.wind_spd?.toFixed(1)} mph
             </span>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

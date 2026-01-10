@@ -1,9 +1,9 @@
-**Data Dashboard - US Cities Weather**
+## Data Dashboard - US Cities Weather
 
 A dynamic weather dashboard displaying real-time weather data for 15 cities across the United States with interactive filtering and search capabilities.
 
 
-**🚀 Features**
+## 🚀 Features
 
 **Data Visualization**
 

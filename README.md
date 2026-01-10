@@ -1,11 +1,11 @@
-Data Dashboard - US Cities Weather
+**Data Dashboard - US Cities Weather**
 
 A dynamic weather dashboard displaying real-time weather data for 15 cities across the United States with interactive filtering and search capabilities.
 
-🚀 Features
 
+**🚀 Features**
 
-Data Visualization
+**Data Visualization**
 
 -Real-time weather data for 15+ US cities
 
@@ -16,7 +16,8 @@ Data Visualization
 -Three summary statistics providing data insights
 
 
-Interactive Filtering
+
+**Interactive Filtering**
 
 -Dynamic Search Bar: Filter cities by name with real-time results
 
@@ -26,7 +27,9 @@ Interactive Filtering
 
 -Smooth, responsive user experience
 
-Technical Implementation
+
+
+**Technical Implementation**
 
 -Asynchronous API calls using async/await
 
@@ -35,7 +38,7 @@ Technical Implementation
 -Real-time data processing and state management
 
 
-🛠️ Technologies Used
+**🛠️ Technologies Used**
 
 -Frontend: React, JavaScript
 
@@ -44,7 +47,6 @@ Technical Implementation
 -Styling: CSS
 
 -Data Fetching: Fetch API with async/await
-
 
 
       
